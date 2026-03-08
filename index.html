@@ -3,99 +3,130 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FamosaBR - Notícias do Brasil</title>
+<meta name="description" content="Celebridades, entretenimento e fofoca boa">
+<title>FamosBR - Celebridades, entretenimento e fofoca boa</title>
 <style>
-* { margin:0; padding:0; box-sizing:border-box; }
-body { font-family: 'Georgia', serif; background: #f5f5f5; color: #222; }
-header { background: #922b21; color: white; padding: 20px 0; text-align: center; }
-header h1 { font-size: 2.5em; letter-spacing: 2px; }
-header p { font-size: 0.9em; opacity: 0.8; margin-top: 5px; }
-nav { background: rgba(0,0,0,0.2); padding: 10px 0; text-align: center; }
-nav a { color: white; text-decoration: none; margin: 0 15px; font-size: 0.9em; text-transform: uppercase; letter-spacing: 1px; }
-.banner { background: #222; text-align: center; padding: 10px; }
-.banner img { max-width: 728px; width: 100%; }
-.container { max-width: 1200px; margin: 30px auto; padding: 0 20px; display: grid; grid-template-columns: 2fr 1fr; gap: 30px; }
-.main-news article { background: white; margin-bottom: 20px; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-.main-news article img { width: 100%; height: 220px; object-fit: cover; background: #922b21; display: flex; align-items: center; justify-content: center; }
-.main-news article .content { padding: 20px; }
-.main-news article h2 { font-size: 1.3em; margin-bottom: 10px; color: #1a1a1a; }
-.main-news article h2 a { text-decoration: none; color: inherit; }
-.main-news article h2 a:hover { color: #922b21; }
-.main-news article p { color: #666; line-height: 1.6; font-size: 0.95em; }
-.tag { background: #922b21; color: white; padding: 3px 10px; border-radius: 20px; font-size: 0.75em; text-transform: uppercase; display: inline-block; margin-bottom: 10px; }
-.sidebar { }
-.sidebar-banner { background: white; padding: 10px; border-radius: 8px; text-align: center; margin-bottom: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-.sidebar .widget { background: white; border-radius: 8px; padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-.sidebar .widget h3 { font-size: 1em; text-transform: uppercase; letter-spacing: 1px; color: #922b21; border-bottom: 2px solid #922b21; padding-bottom: 10px; margin-bottom: 15px; }
-.sidebar .widget ul { list-style: none; }
-.sidebar .widget ul li { padding: 8px 0; border-bottom: 1px solid #eee; font-size: 0.9em; }
-.sidebar .widget ul li a { text-decoration: none; color: #333; }
-footer { background: #1a1a1a; color: #aaa; text-align: center; padding: 30px; margin-top: 40px; font-size: 0.85em; }
-@media(max-width:768px) { .container { grid-template-columns: 1fr; } }
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Georgia',serif;background:#f4f4f4;color:#222;}
+header{background:#c0392b;color:white;padding:20px 0;text-align:center;}
+header h1{font-size:2.5em;letter-spacing:2px;}
+header p{font-size:0.95em;opacity:0.85;margin-top:6px;}
+nav{background:rgba(0,0,0,0.25);padding:10px 0;text-align:center;}
+nav a{color:white;text-decoration:none;margin:0 15px;font-size:0.9em;text-transform:uppercase;letter-spacing:1px;transition:opacity 0.2s;}
+nav a:hover{opacity:0.7;}
+.breaking{background:#e74c3c;color:white;padding:8px 20px;text-align:center;font-size:0.85em;font-weight:bold;}
+.container{max-width:1200px;margin:30px auto;padding:0 20px;display:grid;grid-template-columns:2fr 1fr;gap:30px;}
+.main-news article{background:white;margin-bottom:25px;border-radius:10px;overflow:hidden;box-shadow:0 3px 12px rgba(0,0,0,0.1);transition:transform 0.2s;}
+.main-news article:hover{transform:translateY(-3px);}
+.main-news article img{width:100%;height:240px;object-fit:cover;}
+.main-news article .content{padding:22px;}
+.main-news article h2{font-size:1.35em;margin-bottom:12px;color:#1a1a1a;line-height:1.4;}
+.main-news article h2 a{text-decoration:none;color:inherit;}
+.main-news article h2 a:hover{color:#c0392b;}
+.main-news article p{color:#666;line-height:1.7;font-size:0.95em;margin-bottom:12px;}
+.tag{color:white;padding:4px 12px;border-radius:20px;font-size:0.75em;text-transform:uppercase;display:inline-block;margin-bottom:12px;font-weight:bold;}
+.leia-mais{font-size:0.9em;font-weight:bold;text-decoration:none;}
+.sidebar .widget{background:white;border-radius:10px;padding:22px;margin-bottom:22px;box-shadow:0 3px 12px rgba(0,0,0,0.1);}
+.sidebar .widget h3{font-size:0.9em;text-transform:uppercase;letter-spacing:1px;color:#c0392b;border-bottom:3px solid #c0392b;padding-bottom:10px;margin-bottom:15px;}
+.sidebar .widget ul{list-style:none;}
+.sidebar .widget ul li{padding:9px 0;border-bottom:1px solid #eee;font-size:0.9em;}
+.sidebar .widget ul li:last-child{border-bottom:none;}
+.sidebar .widget ul li a{text-decoration:none;color:#333;line-height:1.4;display:block;}
+.sidebar .widget ul li a:hover{color:#c0392b;}
+.date-badge{color:#999;font-size:0.8em;margin-bottom:8px;}
+footer{background:#1a1a1a;color:#999;text-align:center;padding:30px;margin-top:40px;font-size:0.85em;}
+footer a{color:#ccc;text-decoration:none;}
+@media(max-width:768px){.container{grid-template-columns:1fr;}.main-news article img{height:200px;}header h1{font-size:1.8em;}}
 </style>
 </head>
 <body>
 <header>
-  <h1>⭐ FamosaBR</h1>
-  <p>As melhores notícias sobre Entretenimento e Celebridades</p>
+  <h1>⭐ FamosBR</h1>
+  <p>Celebridades, entretenimento e fofoca boa</p>
 </header>
 <nav>
   <a href="/">Início</a>
   <a href="#">Últimas</a>
   <a href="#">Mais Lidas</a>
+  <a href="#">Vídeos</a>
   <a href="#">Contato</a>
 </nav>
-<div class="banner">
-  <a href="#"><img src="https://via.placeholder.com/728x90/333/fff?text=Publicidade" alt="Banner"></a>
-</div>
+<div class="breaking">🔴 AO VIVO: Acompanhe as últimas notícias em tempo real</div>
 <div class="container">
   <div class="main-news">
+    
     <article>
-      <div style="background:#922b21;height:220px;display:flex;align-items:center;justify-content:center;color:white;font-size:3em">⭐</div>
+      <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800&q=80" alt="Anitta confirma novo álbum para abril e antecipa clipe gravado em Nova York e Rio" loading="lazy" onerror="this.style.background='#c0392b';this.style.height='220px'">
       <div class="content">
-        <span class="tag">Destaque</span>
-        <h2><a href="noticia-1.html">Grande novidade no mundo de Entretenimento e Celebridades surpreende especialistas</a></h2>
-        <p>Os últimos acontecimentos no setor de Entretenimento e Celebridades estão movimentando todo o Brasil. Especialistas analisam o cenário atual e apontam as principais tendências para os próximos meses. Confira tudo que está acontecendo.</p>
+        <span class="tag" style="background:#c0392b">Música</span>
+        <h2><a href="artigo-1.html">Anitta confirma novo álbum para abril e antecipa clipe gravado em Nova York e Rio</a></h2>
+        <p>A cantora carioca confirmou o lançamento do seu novo projeto musical para o mês de abril. Com 12 faixas inéditas e participações internacionais surpresa, o álbum promete ser o mais ambicioso da carrei...</p>
+        <a href="artigo-1.html" class="leia-mais" style="color:#c0392b">Leia mais →</a>
       </div>
     </article>
     <article>
-      <div style="background:#922b21;height:220px;display:flex;align-items:center;justify-content:center;color:white;font-size:3em">⭐</div>
+      <img src="https://images.unsplash.com/photo-1598387993441-a364f854cfce?w=800&q=80" alt="Xuxa anuncia retorno à TV com programa de variedades no Globoplay" loading="lazy" onerror="this.style.background='#c0392b';this.style.height='220px'">
       <div class="content">
-        <span class="tag">Brasil</span>
-        <h2><a href="noticia-2.html">Brasil se destaca em Entretenimento e Celebridades com resultados históricos</a></h2>
-        <p>O Brasil continua a mostrar seu potencial no setor de Entretenimento e Celebridades. Com novos investimentos e parcerias estratégicas, o país avança em direção a conquistas inéditas que prometem impactar positivamente a vida de milhões de brasileiros.</p>
+        <span class="tag" style="background:#c0392b">TV</span>
+        <h2><a href="artigo-2.html">Xuxa anuncia retorno à TV com programa de variedades no Globoplay</a></h2>
+        <p>A Rainha dos Baixinhos volta à televisão após quase uma década. O programa inédito terá formato de variedades com entrevistas, quadros de humor e participações de artistas nacionais e internacionais....</p>
+        <a href="artigo-2.html" class="leia-mais" style="color:#c0392b">Leia mais →</a>
       </div>
     </article>
     <article>
-      <div style="background:#922b21;height:220px;display:flex;align-items:center;justify-content:center;color:white;font-size:3em">⭐</div>
+      <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80" alt="Ludmilla bate recorde histórico no Spotify Brasil com 50 milhões de streams em 24h" loading="lazy" onerror="this.style.background='#c0392b';this.style.height='220px'">
       <div class="content">
-        <span class="tag">Exclusivo</span>
-        <h2><a href="noticia-3.html">Entenda o impacto das mudanças em Entretenimento e Celebridades no dia a dia</a></h2>
-        <p>As transformações no mercado de Entretenimento e Celebridades chegam com força ao cotidiano do brasileiro. Nossa equipe ouviu especialistas e trouxe uma análise completa sobre o que mudou e o que ainda está por vir neste setor tão importante.</p>
+        <span class="tag" style="background:#c0392b">Música</span>
+        <h2><a href="artigo-3.html">Ludmilla bate recorde histórico no Spotify Brasil com 50 milhões de streams em 24h</a></h2>
+        <p>A cantora carioca quebrou o próprio recorde nacional de streams em 24 horas com o lançamento da nova música. O feat internacional catapultou Ludmilla ao topo das paradas mundiais....</p>
+        <a href="artigo-3.html" class="leia-mais" style="color:#c0392b">Leia mais →</a>
+      </div>
+    </article>
+    <article>
+      <img src="https://images.unsplash.com/photo-1529634806980-85c3dd6d34ac?w=800&q=80" alt="Casal famoso anuncia separação após 7 anos juntos e divide fãs nas redes" loading="lazy" onerror="this.style.background='#c0392b';this.style.height='220px'">
+      <div class="content">
+        <span class="tag" style="background:#c0392b">Fofoca</span>
+        <h2><a href="artigo-4.html">Casal famoso anuncia separação após 7 anos juntos e divide fãs nas redes</a></h2>
+        <p>A separação de um dos casais mais queridos do entretenimento brasileiro movimentou as redes sociais neste fim de semana. Ambos publicaram notas afirmando que continuam amigos....</p>
+        <a href="artigo-4.html" class="leia-mais" style="color:#c0392b">Leia mais →</a>
+      </div>
+    </article>
+    <article>
+      <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=800&q=80" alt="Homenagem a Silvio Santos: família anuncia museu e fundação em sua memória" loading="lazy" onerror="this.style.background='#c0392b';this.style.height='220px'">
+      <div class="content">
+        <span class="tag" style="background:#c0392b">Memória</span>
+        <h2><a href="artigo-5.html">Homenagem a Silvio Santos: família anuncia museu e fundação em sua memória</a></h2>
+        <p>A família do apresentador anunciou a criação de um museu interativo em São Paulo e uma fundação dedicada a apoiar crianças carentes. O legado de 60 anos de televisão será eternizado....</p>
+        <a href="artigo-5.html" class="leia-mais" style="color:#c0392b">Leia mais →</a>
       </div>
     </article>
   </div>
   <div class="sidebar">
-    <div class="sidebar-banner">
-      <a href="#"><img src="https://via.placeholder.com/300x250/444/fff?text=Anuncio" alt="Anúncio" style="width:100%;border-radius:4px"></a>
-    </div>
     <div class="widget">
-      <h3>Mais Lidas</h3>
+      <h3>📰 Mais Lidas</h3>
       <ul>
-        <li><a href="#">⭐ Notícia em destaque sobre Entretenimento e Celebridades</a></li>
-        <li><a href="#">⭐ Últimas atualizações do setor</a></li>
-        <li><a href="#">⭐ Análise especial dos experts</a></li>
-        <li><a href="#">⭐ O futuro de Entretenimento e Celebridades no Brasil</a></li>
-        <li><a href="#">⭐ Tendências para 2026</a></li>
+        <li><a href="artigo-1.html">⭐ Anitta confirma novo álbum para abril e antecipa clipe grava...</a></li>
+<li><a href="artigo-2.html">⭐ Xuxa anuncia retorno à TV com programa de variedades no Glob...</a></li>
+<li><a href="artigo-3.html">⭐ Ludmilla bate recorde histórico no Spotify Brasil com 50 mil...</a></li>
+<li><a href="artigo-4.html">⭐ Casal famoso anuncia separação após 7 anos juntos e divide f...</a></li>
+<li><a href="artigo-5.html">⭐ Homenagem a Silvio Santos: família anuncia museu e fundação ...</a></li>
+
       </ul>
     </div>
-    <div class="sidebar-banner">
-      <a href="#"><img src="https://via.placeholder.com/160x600/555/fff?text=Ad" alt="Anúncio" style="width:100%;border-radius:4px"></a>
+    <div class="widget">
+      <h3>📅 Publicado em</h3>
+      <p style="font-size:0.9em;color:#666;">Domingo, 8 de março de 2026 · Atualizado às 08:00</p>
+    </div>
+    <div class="widget">
+      <h3>📬 Newsletter</h3>
+      <p style="font-size:0.85em;color:#666;margin-bottom:12px;">Receba as melhores notícias direto no seu email</p>
+      <input type="email" placeholder="seu@email.com" style="width:100%;padding:8px;border:1px solid #ddd;border-radius:5px;font-size:0.9em;margin-bottom:8px;">
+      <button style="width:100%;padding:8px;background:#c0392b;color:white;border:none;border-radius:5px;cursor:pointer;font-weight:bold;">Assinar grátis</button>
     </div>
   </div>
 </div>
 <footer>
-  <p>&copy; 2026 FamosaBR. Todos os direitos reservados. | Política de Privacidade | Contato</p>
+  <p>&copy; 2026 FamosBR. Todos os direitos reservados. | <a href="#">Política de Privacidade</a> | <a href="#">Termos de Uso</a> | <a href="#">Contato</a></p>
 </footer>
 </body>
 </html>
